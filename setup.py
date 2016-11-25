@@ -14,5 +14,6 @@ setup(
         "wsgiref==0.1.2",
         "Flask-SQLAlchemy==2.1",
         "ipython==5.1.0",
+        "MySQL-python==1.2.5",
     ],
 )
