@@ -18,4 +18,4 @@ RUN make createdb
 
 EXPOSE 5000 5001
 
-CMD make launch
+CMD ["make", "launch"]
