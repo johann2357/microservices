@@ -2,7 +2,7 @@
 
 VIRTUALENV = $(shell which virtualenv)
 
-clean: shutdown
+clean:
 	rm -fr microservices.egg-info
 	rm -fr venv
 	rm -fr /tmp/test.db
