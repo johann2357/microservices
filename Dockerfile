@@ -6,6 +6,8 @@ RUN apt-get update
 
 RUN apt-get install -y git build-essential python python-dev python-distribute python-pip
 
+RUN pip install virtualenv
+
 RUN git clone https://github.com/johann2357/microservices.git app
 
 WORKDIR /app
