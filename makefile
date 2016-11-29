@@ -17,9 +17,11 @@ install: clean venv
 	. venv/bin/activate; python setup.py install
 	. venv/bin/activate; python setup.py develop
 
-launch:
-	venv/bin/python services/user.py &
-	venv/bin/python services/tweet.py &
+launchuser:
+	venv/bin/python services/user.py
+
+launchtweet:
+	venv/bin/python services/tweet.py
 
 shutdown:
 	ps -ef | grep "services/user.py" | grep -v grep | awk '{print $$2}' | xargs kill || echo "users service is not running"

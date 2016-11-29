@@ -18,6 +18,6 @@ RUN make install
 
 RUN make createdb
 
-EXPOSE 5000 5001
+EXPOSE 5001
 
-CMD ["make", "launch"]
+CMD ["venv/bin/python", "services/tweet.py"]
