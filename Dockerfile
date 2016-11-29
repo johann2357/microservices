@@ -4,9 +4,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu/ trusty main" >> /etc/apt/sources
 
 RUN apt-get update
 
-RUN apt-get install -y git curl nano wget net-tools build-essential
-
-RUN apt-get install -y python python-dev python-distribute python-pip
+RUN apt-get install -y git build-essential python python-dev python-distribute python-pip
 
 RUN git clone https://github.com/johann2357/microservices.git app
 
@@ -18,4 +16,6 @@ RUN make install
 
 RUN make createdb
 
-RUN make launch
+EXPOSE 5000 5001
+
+CMD make launch
