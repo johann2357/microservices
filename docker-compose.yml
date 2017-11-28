@@ -7,7 +7,15 @@ services:
       context: ./services
       dockerfile: Dockerfile-user
     ports:
-      - "5000:5000"
+      - "5010:5000"
+    links:
+      - mysql
+  user2:
+    build:
+      context: ./services
+      dockerfile: Dockerfile-user
+    ports:
+      - "5011:5000"
     links:
       - mysql
   tweet:
@@ -15,7 +23,15 @@ services:
       context: ./services
       dockerfile: Dockerfile-tweet
     ports:
-      - "5001:5001"
+      - "5020:5001"
+    links:
+      - mysql
+  tweet2:
+    build:
+      context: ./services
+      dockerfile: Dockerfile-tweet
+    ports:
+      - "5021:5001"
     links:
       - mysql
   mysql:
