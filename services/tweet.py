@@ -6,7 +6,7 @@ from flask import (
 )
 from werkzeug.exceptions import NotFound
 
-from services import nice_json
+from utils import nice_json
 from persistence.models import (
     db,
     Tweet,
@@ -70,4 +70,4 @@ def user_tweets(username):
 
 
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)

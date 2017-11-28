@@ -1,0 +1,31 @@
+---
+version: "2"
+
+services:
+  user:
+    build:
+      context: ./services
+      dockerfile: Dockerfile-user
+    ports:
+      - "5000:5000"
+    links:
+      - mysql
+  tweet:
+    build:
+      context: ./services
+      dockerfile: Dockerfile-tweet
+    ports:
+      - "5001:5001"
+    links:
+      - mysql
+  mysql:
+    image: mysql
+    volumes:
+      - mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: tester
+      MYSQL_DATABASE: test
+      MYSQL_USER: tester
+      MYSQL_PASSWORD: tester
+volumes:
+  mysqldata:

@@ -4,7 +4,7 @@ from flask import (
 )
 from werkzeug.exceptions import NotFound
 
-from services import nice_json
+from utils import nice_json
 from persistence.models import (
     User,
 )
@@ -42,4 +42,10 @@ def user_record(username):
 
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    from persistence.init_db import setup
+    try:
+        setup()
+    except:
+        print 'CANNOT SETUP TWICE'
+        pass
+    app.run(host='0.0.0.0', port=5000, debug=True)

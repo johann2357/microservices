@@ -1,10 +1,10 @@
-if __name__ == "__main__":
+def setup():
     from datetime import datetime
     from models import db, User, Tweet
 
     db.create_all()
 
-    u = User(username='johann2357', email='johann2357@gmail.com')
+    u = User(username='user31', email='user31@gmail.com')
     db.session.add(u)
     db.session.commit()
 
@@ -46,3 +46,7 @@ if __name__ == "__main__":
     )
     db.session.add(tweet)
     db.session.commit()
+
+
+if __name__ == "__main__":
+    setup()
